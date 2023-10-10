@@ -36,6 +36,7 @@ app.get('/', (req, res) => res.send('Hello my World'));
 
 require('./routes/user.js')(app);
 require('./routes/AssetRegister.js')(app);
+require('./routes/configuretion.js')(app);
 
 //create a server
 var server = app.listen(port, function() {
