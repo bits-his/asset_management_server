@@ -11,7 +11,9 @@ import validateLoginForm from '../validation/login';
 
 // create user
 const create = (req, res) => {
-  const { errors, isValid } = validateRegisterForm(req.body);
+  // const { errors, is Valid } = validateRegisterForm(req.body);
+  const errors  = {};
+  const isValid = true;
   let { 
     firstname, 
     lastname, 
@@ -44,7 +46,7 @@ const create = (req, res) => {
           newUser.password = hash;
           User.create(newUser)
             .then(user => {
-              res.json({ user });
+              res.json({success:true, user });
             })
             .catch(err => {
               res.status(500).json({ err });
